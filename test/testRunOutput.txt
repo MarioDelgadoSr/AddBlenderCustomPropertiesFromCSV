@@ -1,0 +1,10 @@
+******************************** meshName: Cube.000 ********************************************
+ properties before assignment(s):  []
+Updated meshName:  Cube.000 , propName:  visualKey , propValue: Cube.000
+ properties after assignment(s):  [('visualKey', 'Cube.000')]
+******************************** meshName: Cube.000 ********************************************
+******************************** meshName: Cube.001 ********************************************
+ properties before assignment(s):  []
+Updated meshName:  Cube.001 , propName:  visualKey , propValue: Cube.001
+ properties after assignment(s):  [('visualKey', 'Cube.001')]
+******************************** meshName: Cube.001 ********************************************

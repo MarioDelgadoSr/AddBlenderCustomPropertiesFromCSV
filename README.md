@@ -13,8 +13,10 @@ The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/librar
 * With a name = 'object1'
 * The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1'
 
+````
 objectName,propName1
 object1,prop1
+````
 
 * The objectName for the mesh(es) must always be in column 1. 
 

@@ -12,28 +12,14 @@ A Blender Python script to read a formatted csv (comma seperated value) file to 
 objectName,propName1
 object1,prop1
 
-Script Syntax:
+Script Syntax (source code includes comments)
 
 ''''
 
-# Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
-# Author: Mario Delgado, LinkeIn: https://www.linkedin.com/in/mario-delgado-5b6195155/
-# Source: http://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV
-# 
-# Custom Properties: https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties
-
 import bpy, csv
 
-# input: https://docs.python.org/3/library/functions.html#input
-filePath = input("Enter file name path (folder/filename.csv):")         #Example: Type "c:/data/keys.csv" when prompted in the conole
+filePath = input("Enter file name path (folder/filename.csv):")        le
 
-# Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
-#
-# objectName,propName1,propName2,...
-# object1,prop1,prop2
-# object2,prop1,prop2
-#
-# Script will assign bpy.data.objects[objectName].data[propNameN] = propN
 
 with open( filePath ) as csvfile:
     rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html

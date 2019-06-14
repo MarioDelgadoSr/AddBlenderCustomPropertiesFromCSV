@@ -10,15 +10,15 @@ The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/librar
 [Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
 * Assuming a Blender object (.type = 'MESH'); 
-* With a name = 'object1'
-* The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1'
+* With a name = 'object1';
+* The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1':
 
 ````
 objectName,propName1
 object1,prop1
 ````
 
-* The objectName for the mesh(es) must always be in column 1. 
+* The objectName's property values for the indivdual mesh(es) must always be in column 1. 
 
 ## Script Syntax:
 

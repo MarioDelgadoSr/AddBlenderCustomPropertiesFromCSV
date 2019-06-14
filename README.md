@@ -5,8 +5,6 @@ A Blender Python script to read a formatted csv (comma seperated value) file to 
 
 The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
 
-## Script Syntax:
-
 # Usage
 
 [Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
@@ -19,6 +17,8 @@ objectName,propName1
 object1,prop1
 
 * The objectName for the mesh(es) must always be in column 1. 
+
+## Script Syntax:
 
 ````
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')

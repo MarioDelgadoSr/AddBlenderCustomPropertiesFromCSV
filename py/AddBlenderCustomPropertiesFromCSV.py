@@ -29,7 +29,7 @@ with open( filePath ) as csvfile:
         for x in range (1, len(rdr.fieldnames)):  
             propName =  rdr.fieldnames[x]
             propValue = row[propName]
-            # List Comprehension: hhttps://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+            # List Comprehension: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
             mesh = [obj for obj in bpy.data.objects if obj.name == meshName and obj.type == 'MESH'][0]
             mesh.data[propName] = propValue    
             print("Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])

@@ -16,7 +16,8 @@ The file loaded must be in a
 objectName,propName1
 object1,prop1
 
-* The objectName for the mesh(es) must always be in column 1 [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
+* The objectName for the mesh(es) must always be in column 1 
+* Files must be in [csv.DictReader](https://docs.python.org/3/library/csv.html) class format.
 
 ## Script Syntax:
 

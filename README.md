@@ -15,33 +15,29 @@ object1,prop1
 Script Syntax (source code includes comments)
 
 ''''
+	import bpy, csv
 
-import bpy, csv
+	filePath = input("Enter file name path (folder/filename.csv):")   
 
-filePath = input("Enter file name path (folder/filename.csv):")        le
+	with open( filePath ) as csvfile:
+		rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
+		for row in rdr:
 
-
-with open( filePath ) as csvfile:
-    rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
-    for row in rdr:
-
-        meshName = row[rdr.fieldnames[0]]
-        
-        print("******************************** meshName:", meshName ,"********************************************")
-        print(" properties before assignment(s): ", bpy.data.objects[meshName].data.items()) 
-        
-        for x in range (1, len(rdr.fieldnames)):  
-            propName =  rdr.fieldnames[x]
-            propValue = row[propName]
-            # List Comprehension: hhttps://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
-            mesh = [obj for obj in bpy.data.objects if obj.name == meshName and obj.type == 'MESH'][0]
-            mesh.data[propName] = propValue    
-            print("Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
-        
-        print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
-        print("******************************** meshName:", meshName ,"********************************************")
-
-
+			meshName = row[rdr.fieldnames[0]]
+			
+			print("******************************** meshName:", meshName ,"********************************************")
+			print(" properties before assignment(s): ", bpy.data.objects[meshName].data.items()) 
+			
+			for x in range (1, len(rdr.fieldnames)):  
+				propName =  rdr.fieldnames[x]
+				propValue = row[propName]
+				# List Comprehension: hhttps://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+				mesh = [obj for obj in bpy.data.objects if obj.name == meshName and obj.type == 'MESH'][0]
+				mesh.data[propName] = propValue    
+				print("Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
+			
+			print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
+			print("******************************** meshName:", meshName ,"********************************************")
 ''''
 
 

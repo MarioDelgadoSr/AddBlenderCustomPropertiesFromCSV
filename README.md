@@ -3,16 +3,22 @@
 
 A Blender Python script to read a formatted csv (comma seperated value) file to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
 
+The file loaded must be in a 
+
 # Usage
 
-[Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename.csv that contains the data to update the Custom Properies. 
+[Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
-* Assuming a Blender object (.type = 'MESH') with a name = 'object1', the following file contents will assign the object the value of 'prop1' to property 'propName1'
+* Assuming a Blender object (.type = 'MESH'); 
+* With a name = 'object1'
+* The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1'
 
 objectName,propName1
 object1,prop1
 
-Script Syntax (source code includes comments)
+* The objectName for the mesh(es) must always be in column 1 [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
+
+## Script Syntax:
 
 ````
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')

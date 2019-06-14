@@ -14,7 +14,7 @@ object1,prop1
 
 Script Syntax (source code includes comments)
 
-''''
+````
 	import bpy, csv
 
 	filePath = input("Enter file name path (folder/filename.csv):")   
@@ -38,7 +38,7 @@ Script Syntax (source code includes comments)
 			
 			print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
 			print("******************************** meshName:", meshName ,"********************************************")
-''''
+````
 
 
 ## Author

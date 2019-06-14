@@ -5,7 +5,7 @@ A Blender Python script to read a formatted csv (comma seperated value) file to 
 
 The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
 
-# Usage
+#3 Usage
 
 [Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
@@ -20,7 +20,7 @@ object1,prop1
 
 * The objectName's property values for the indivdual mesh(es) must always be in column 1. 
 
-## Script Syntax:
+### Script Syntax:
 
 ````
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
@@ -37,8 +37,8 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
 #
 # objectName,propName1,propName2,...
-# object1,prop1,prop2
-# object2,prop1,prop2
+# object1,prop1,prop2,...
+# object2,prop1,prop2,...
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
 
@@ -61,6 +61,29 @@ with open( filePath ) as csvfile:
         
         print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
         print("******************************** meshName:", meshName ,"********************************************")
+````
+
+### Running Test
+
+* Open [test.blend](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.blend) file in test folder.
+* Run [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) Python script.
+* Reference [test.csv](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.csv) in test folder when prompted by [input](https://docs.python.org/3/library/functions.html#input) prompt.
+
+#### Test Output
+
+````
+
+******************************** meshName: Cube.000 ********************************************
+ properties before assignment(s):  []
+Updated meshName:  Cube.000 , propName:  visualKey , propValue: Cube.000
+ properties after assignment(s):  [('visualKey', 'Cube.000')]
+******************************** meshName: Cube.000 ********************************************
+******************************** meshName: Cube.001 ********************************************
+ properties before assignment(s):  []
+Updated meshName:  Cube.001 , propName:  visualKey , propValue: Cube.001
+ properties after assignment(s):  [('visualKey', 'Cube.001')]
+******************************** meshName: Cube.001 ********************************************
+
 ````
 
 

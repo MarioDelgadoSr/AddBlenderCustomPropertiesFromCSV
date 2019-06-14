@@ -12,8 +12,8 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
 #
 # objectName,propName1,propName2,...
-# object1,prop1,prop2
-# object2,prop1,prop2
+# object1,prop1,prop2,...
+# object2,prop1,prop2,...
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
 

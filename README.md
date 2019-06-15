@@ -5,7 +5,7 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 
 * The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
 * This script can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
-	* When a Blender file is exported to a glTF file, the Custom Properties are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
+	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
 
 #3 Usage
 
@@ -13,8 +13,13 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name = 'object1';
-* The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1':
+* The following file contents will assign the Blender mesh with name *object1* a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
 * sanitize = True option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
+
+````
+objectName,propName1
+object1,prop1
+````
 
 **Note:**
 * The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).

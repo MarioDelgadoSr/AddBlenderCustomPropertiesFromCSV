@@ -86,6 +86,10 @@ with open( filePath ) as csvfile:
 * Run [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) Python script.
 * Reference [test.csv](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.csv) in test folder when prompted by [input](https://docs.python.org/3/library/functions.html#input) prompt.
 
+**Note**
+* The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
+ 
+
 #### Test Output
 
 ````

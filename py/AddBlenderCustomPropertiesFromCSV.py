@@ -6,7 +6,20 @@
 
 import bpy, csv
 
+# santize = True will convert Blender's duplicate object name to a Three.js sanitized name
+# This is only a concern when exporting Blender to glTF files with the intent of importing
+# them into Three.js.  Any names with mesh glTF nodes with '.' in the name will have the '.' removed.
+# So sanitizing the names before exporting to glTF (and eventually Three.js) will provide for consitency
+# in any processes that depend on a consitent and accurate node name. 
+# See Three.js sanitizing:  https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 	
+
+sanitize = True   #True or False
+
 # input: https://docs.python.org/3/library/functions.html#input
+# Note: input awaits a response from the system console, not the Blender Python Interactive console
+# System Console: https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console
+# Python Interactive Console: https://docs.blender.org/manual/en/dev/editors/python_console.html
+
 filePath = input("Enter file name path (folder/filename.csv):")         #Example: Type "c:/data/keys.csv" when prompted in the conole
 
 # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
@@ -31,8 +44,14 @@ with open( filePath ) as csvfile:
             propValue = row[propName]
             # List Comprehension: https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
             mesh = [obj for obj in bpy.data.objects if obj.name == meshName and obj.type == 'MESH'][0]
+			
+            if sanitize:
+                mesh.name = mesh.name.replace(".","")
+                print (" Mesh's name sanitized from: ",meshName, " to: ", mesh.name)
+                meshName = mesh.name
+            
             mesh.data[propName] = propValue    
-            print("Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
+            print(" Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
         
         print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
-        print("******************************** meshName:", meshName ,"********************************************")
+        print("")

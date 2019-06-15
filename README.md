@@ -1,7 +1,7 @@
 <!-- Markdown reference: https://guides.github.com/features/mastering-markdown/ -->
 # Python Script to Add Blender Custom Properties From CSV File
 
-The Python script in [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py) will read a formatted csv (comma seperated value) file an use its contents to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
+The Python script, [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py), will read a formatted csv (comma seperated value) file an use its contents to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
 
 * The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
 * This script can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.

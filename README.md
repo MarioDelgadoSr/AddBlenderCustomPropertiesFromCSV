@@ -14,12 +14,13 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
 * The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
-* sanitize = True option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 
 ````
 objectName,propName1
 object1,prop1
 ````
+* sanitize = True option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
+
 
 **Note:**
 * The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).

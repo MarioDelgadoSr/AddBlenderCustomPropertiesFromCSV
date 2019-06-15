@@ -1,5 +1,5 @@
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
-# Author: Mario Delgado, LinkeIn: https://www.linkedin.com/in/mario-delgado-5b6195155/
+# Author: Mario Delgado, LinkedIn: https://www.linkedin.com/in/mario-delgado-5b6195155/
 # Source: http://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV
 # 
 # Custom Properties: https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties

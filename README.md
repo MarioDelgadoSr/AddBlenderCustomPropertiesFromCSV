@@ -7,7 +7,7 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 * This script can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
 	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
 
-#3 Usage
+# Usage
 
 [Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 

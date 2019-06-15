@@ -12,8 +12,8 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 [Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
 * Assuming a Blender object (.type = 'MESH'); 
-* With a name = 'object1';
-* The following file contents will assign the Blender mesh with name *object1* a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
+* With a name == 'object1';
+* The following file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
 * sanitize = True option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 
 ````

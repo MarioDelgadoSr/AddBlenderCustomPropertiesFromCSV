@@ -1,5 +1,5 @@
 <!-- Markdown reference: https://guides.github.com/features/mastering-markdown/ -->
-# Add Blender Custom Properties From CSV File
+# Python Script to Add Blender Custom Properties From CSV File
 
 A Blender Python script to read a formatted csv (comma seperated value) file an use its contents to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
 

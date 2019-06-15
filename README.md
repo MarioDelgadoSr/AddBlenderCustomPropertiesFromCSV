@@ -9,13 +9,17 @@ A Blender Python script to read a formatted csv (comma seperated value) file an 
 
 #3 Usage
 
-[Run script from in Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+[Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name = 'object1';
 * The following file contents will assign the Blender object a Custom Property value of 'prop1' to property 'propName1':
 * sanitize = True option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 
+**Note**
+* The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
+ 
+	
 ````
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
 # Author: Mario Delgado, LinkedIn: https://www.linkedin.com/in/mario-delgado-5b6195155/

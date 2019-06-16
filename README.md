@@ -41,6 +41,7 @@
 ````
 "objectName","propName1","propName2"
 "object1",prop1,"prop2"
+````
 
 * The *sanitize = True* option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 

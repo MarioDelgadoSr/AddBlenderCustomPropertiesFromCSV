@@ -27,7 +27,7 @@
     * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
 		*Note: The file [testWithAddOn.blend](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/testWithAddOn.blend) has the Blender add-on in a text editor window ready to be added directly for a quick-test scenario that doesn't involve [User Preferences](https://docs.blender.org/manual/en/dev/editors/preferences/addons.html?highlight=user%20preferences).
 	
-### Screen Shot of Installed Add-on
+### Screen Shot of Installed Add-on:
 
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 

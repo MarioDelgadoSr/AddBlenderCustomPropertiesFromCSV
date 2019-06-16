@@ -104,7 +104,7 @@ with open( filePath ) as csvfile:
 	* Then select file with file selector;
     * Select 'Add Custom Props' button.	
 
-#### Test Output (same output for either [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) script or [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py)  Add-on)
+#### Test Output (same output for either [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) script or [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py)  Add-on):
 
 ````
 

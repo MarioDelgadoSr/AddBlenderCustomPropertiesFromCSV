@@ -8,6 +8,9 @@
 # Custom Properties: https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties
 
 # Modified from: https://blender.stackexchange.com/questions/26898/how-to-create-a-folder-dialog/26906#26906
+
+bl_info = {"name": "CVS to Custom Properties", "category": "Object"}
+
 import bpy, csv
 
 from bpy.props import (StringProperty,
@@ -41,9 +44,9 @@ class MySettings(PropertyGroup):
         )        
         
         
-class SimpleOperator(bpy.types.Operator):
+class processCustom(bpy.types.Operator):
   
-    bl_idname = "object.simple_operator"
+    bl_idname = "object.process_custom"
     bl_label = ""
     
     properties = bpy.props.StringProperty() # defining the property  
@@ -139,7 +142,7 @@ class addCustomProperitesPanel(Panel):
         
         #Icons: https://blenderartists.org/t/icon-enumeration-script-blender-2-5/491147/3
         #Passing property: https://blenderartists.org/t/how-to-pass-two-arguments-to-a-button-operator/497013/8
-        col.operator("object.simple_operator", text="Add Custom Props").properties= parameter
+        col.operator("object.process_Custom", text="Add Custom Props").properties= parameter
             
         
 # ------------------------------------------------------------------------

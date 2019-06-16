@@ -1,10 +1,18 @@
+********************************Add Blender Custom Properties ********************************************
+
+Adding Custom Properties with the following options:
+
+filePath:  c:\temp\test.csv
+sanitize:  True
+
 ******************************** meshName: Cube.000 ********************************************
  properties before assignment(s):  []
-Updated meshName:  Cube.000 , propName:  visualKey , propValue: Cube.000
- properties after assignment(s):  [('visualKey', 'Cube.000')]
-******************************** meshName: Cube.000 ********************************************
+ Mesh's name sanitized from:  Cube.000  to:  Cube000
+ Updated meshName:  Cube000 , propName:  value , propValue: 10.0
+ properties after assignment(s):  [('value', 10.0)]
+
 ******************************** meshName: Cube.001 ********************************************
  properties before assignment(s):  []
-Updated meshName:  Cube.001 , propName:  visualKey , propValue: Cube.001
- properties after assignment(s):  [('visualKey', 'Cube.001')]
-******************************** meshName: Cube.001 ********************************************
+ Mesh's name sanitized from:  Cube.001  to:  Cube001
+ Updated meshName:  Cube001 , propName:  value , propValue: 20.0
+ properties after assignment(s):  [('value', 20.0)]

@@ -24,11 +24,13 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 
 # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
 #
-# objectName,propName1,propName2,...
-# object1,prop1,prop2,...
-# object2,prop1,prop2,...
+# "objectName","propName1","propName2",...
+# "object1","prop1",prop2,...
+# "object2","prop1",prop2,...
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
+#	* The quoted propNs will be treated as characters
+#	* The un-quoted propNs will be converted to float.
 
 
 print("********************************Add Blender Custom Properties ********************************************")
@@ -38,10 +40,9 @@ print(" ")
 print("filePath: ", filePath)
 print("sanitize: ", str(sanitize))
 print(" ")
-
-
-with open( filePath ) as csvfile:
-    rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
+		
+with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
+    rdr = csv.DictReader( csvfile, quoting = csv.QUOTE_NONNUMERIC )     
     for row in rdr:
 
         meshName = row[rdr.fieldnames[0]]

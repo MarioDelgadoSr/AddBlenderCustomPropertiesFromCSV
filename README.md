@@ -36,12 +36,12 @@
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
-* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
+* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) numeric float value of *prop1* to property 'propName1' and a character value of "*prop2*" to 'propertyName2':
 
 ````
-objectName,propName1
-object1,prop1
-````
+"objectName","propName1","propName2"
+"object1",prop1,"prop2"
+
 * The *sanitize = True* option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 
 ##### Contents of [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py): 
@@ -73,14 +73,25 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 
 # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
 #
-# objectName,propName1,propName2,...
-# object1,prop1,prop2,...
-# object2,prop1,prop2,...
+# "objectName","propName1","propName2",...
+# "object1","prop1",prop2,...
+# "object2","prop1",prop2,...
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
+#	* The quoted propNs will be treated as characters
+#	* The un-quoted propNs will be converted to float.
 
-with open( filePath ) as csvfile:
-    rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
+
+print("********************************Add Blender Custom Properties ********************************************")
+print(" ")
+print("Adding Custom Properties with the following options:")
+print(" ")
+print("filePath: ", filePath)
+print("sanitize: ", str(sanitize))
+print(" ")
+		
+with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
+    rdr = csv.DictReader( csvfile, quoting = csv.QUOTE_NONNUMERIC )     
     for row in rdr:
 
         meshName = row[rdr.fieldnames[0]]
@@ -110,11 +121,11 @@ with open( filePath ) as csvfile:
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
-* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) value of 'prop1' to property 'propName1':
+* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) numeric float value of *prop1* to property 'propName1' and a character value of "*prop2*" to 'propertyName2':
 
 ````
-objectName,propName1
-object1,prop1
+"objectName","propName1","propName2"
+"object1",prop1,"prop2"
 ````
 * Once  [installed](https://www.youtube.com/watch?v=DDt96E-xojg) , the Blender Add-on will be registered in the Tools panel:
 
@@ -194,13 +205,15 @@ class processCustom(bpy.types.Operator):
         # Python Interactive Console: https://docs.blender.org/manual/en/dev/editors/python_console.html
         #filePath = input("Enter file name path (folder/filename.csv):")         #Example: Type "c:/data/keys.csv" when prompted in the conole
 
-        # Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
-        #
-        # objectName,propName1,propName2,...
-        # object1,prop1,prop2,...
-        # object2,prop1,prop2,...
-        #
-        # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
+		# Example of content in .csv file, line 1 contains column heading (Object Name and Properties):
+		#
+		# "objectName","propName1","propName2",...
+		# "object1","prop1",prop2,...
+		# "object2","prop1",prop2,...
+		#
+		# Script will assign bpy.data.objects[objectName].data[propNameN] = propN
+		#	* The quoted propNs will be treated as characters
+		#	* The un-quoted propNs will be converted to float.
 
         print("********************************Add Blender Custom Properties ********************************************")
         print(" ")
@@ -210,8 +223,8 @@ class processCustom(bpy.types.Operator):
         print("sanitize: ", str(sanitize))
         print(" ")
 
-        with open( filePath ) as csvfile:
-            rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
+        with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
+			rdr = csv.DictReader( csvfile, quoting = csv.QUOTE_NONNUMERIC )  
             for row in rdr:
 
                 meshName = row[rdr.fieldnames[0]]
@@ -318,14 +331,14 @@ sanitize:  True
 ******************************** meshName: Cube.000 ********************************************
  properties before assignment(s):  []
  Mesh's name sanitized from:  Cube.000  to:  Cube000
- Updated meshName:  Cube000 , propName:  visualKey , propValue: Cube.000
- properties after assignment(s):  [('visualKey', 'Cube.000')]
+ Updated meshName:  Cube000 , propName:  value , propValue: 10.0
+ properties after assignment(s):  [('value', 10.0)]
 
 ******************************** meshName: Cube.001 ********************************************
  properties before assignment(s):  []
  Mesh's name sanitized from:  Cube.001  to:  Cube001
- Updated meshName:  Cube001 , propName:  visualKey , propValue: Cube.001
- properties after assignment(s):  [('visualKey', 'Cube.001')]
+ Updated meshName:  Cube001 , propName:  value , propValue: 20.0
+ properties after assignment(s):  [('value', 20.0)]
 ````
 
 

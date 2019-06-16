@@ -1,7 +1,9 @@
 <!-- Markdown reference: https://guides.github.com/features/mastering-markdown/ -->
 # Python Script to Add Blender Custom Properties From CSV File
 
-The Python script, [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py), will read a formatted csv (comma seperated value) file and use its contents to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
+* The Python script, [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py), will read a formatted csv (comma seperated value) file and use its contents to set [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties).
+
+* The Blender Add-on, [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py), will perform the same task, but as an Add-on integrated into the 3D View Tool Panel.
 
 * The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
 * This script can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
@@ -9,7 +11,16 @@ The Python script, [AddBlenderCustomPropertiesFromCSV.py](https://github.com/Mar
 
 ## Usage
 
-* [Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+
+### Option 1
+
+* [Run (https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) the [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py) script from within Blender and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+
+**Note:**
+* The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
+ 
+### Option 2
+
 * Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
 	* Add-on name is 'CVS to Custom Properties' under Object
 	* Then select file with file selector;
@@ -30,9 +41,7 @@ object1,prop1
 * The *sanitize = True* option will sanitize a mesh's name to be consitent wth [Three.js naming requirements for nodes](https://discourse.threejs.org/t/issue-with-gltfloader-and-objects-with-dots-in-their-name-attribute/6726 ).
 
 
-**Note:**
-* The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
- 
+
 	
 ````
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
@@ -96,12 +105,16 @@ with open( filePath ) as csvfile:
 
 ### Running the Test
 
+#### Option 1
+
 * Open [test.blend](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.blend) file in test folder.
 * Run [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) Python script.
 * Reference [test.csv](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.csv) in test folder when prompted by [input](https://docs.python.org/3/library/functions.html#input) prompt.
 
 **Note:**
 * The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
+ 
+ #### Option 2
  
 * Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
 	* Add-on name is 'CVS to Custom Properties' under Object

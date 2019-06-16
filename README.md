@@ -323,6 +323,14 @@ if __name__ == "__main__":
 **Screen Shot of Installed Add-on**
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 	
+### Contents of test.csv
+
+````
+"Mesh","value"
+"Cube.000",10
+"Cube.001",20
+````	
+	
 	
 #### Test Output 
 

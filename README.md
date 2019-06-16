@@ -22,7 +22,7 @@
 ### Option 2
 
 * Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
-	* Add-on name is 'CVS to Custom Properties' under Object
+	* Add-on name is '**CVS to Custom Properties**' under Object;
 	* Then select file with file selector;
     * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
 	
@@ -31,7 +31,7 @@
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 
 
-#### Workflow
+#### Script Workflow
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
@@ -120,9 +120,9 @@ with open( filePath ) as csvfile:
  #### Option 2
  
 * Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
-	* Add-on name is 'CVS to Custom Properties' under Object
+	* Add-on name is '**CVS to Custom Properties**' under Object;
 	* Then select file with file selector;
-    * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
+    * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.s.
 	
 **Screen Shot of Installed Add-on**
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	

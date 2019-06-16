@@ -21,7 +21,7 @@
  
 ### Option 2
 
-* Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
+* Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg) [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
 	* Add-on name is '**CVS to Custom Properties**' under Object;
 	* Then select file with file selector;
     * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
@@ -301,7 +301,6 @@ if __name__ == "__main__":
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 	
 	
-
 #### Test Output 
 
 The output is the same for either [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py) script or [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py)  Add-on):

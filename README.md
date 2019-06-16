@@ -32,6 +32,14 @@
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 
 
+#### Creating the Properly Formatted CSV Files
+
+* All text value (including column headers) must be double quoted in the csv file.
+* Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 
+* One option is to use a [macro](https://stackoverflow.com/questions/846839/excel-how-to-add-double-quotes-to-strings-only-in-csv-file).
+* Another option is to use [OpenOffice](http://www.openoffice.org/) as detailed in [this post](https://superuser.com/questions/130592/how-do-you-force-excel-to-quote-all-columns-of-a-csv-file).
+* The Python Scripts will throw an exception error if they attempt to convert an un-quoted character string to a float numeric.
+
 #### Script Workflow
 
 * Assuming a Blender object (.type = 'MESH'); 

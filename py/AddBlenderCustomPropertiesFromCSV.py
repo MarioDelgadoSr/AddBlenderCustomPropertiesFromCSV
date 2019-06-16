@@ -30,6 +30,16 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
 
+
+print("********************************Add Blender Custom Properties ********************************************")
+print(" ")
+print("Adding Custom Properties with the following options:")
+print(" ")
+print("filePath: ", filePath)
+print("sanitize: ", str(sanitize))
+print(" ")
+
+
 with open( filePath ) as csvfile:
     rdr = csv.DictReader( csvfile )     # https://docs.python.org/3/library/csv.html
     for row in rdr:

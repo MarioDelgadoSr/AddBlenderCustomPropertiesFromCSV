@@ -9,7 +9,10 @@ The Python script, [AddBlenderCustomPropertiesFromCSV.py](https://github.com/Mar
 
 ## Usage
 
-[Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+* [Run script within Blender](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+* Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py]() as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
+	* Then select file with file selector;
+    * Select 'Add Custom Props' button.	
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
@@ -95,23 +98,33 @@ with open( filePath ) as csvfile:
 **Note:**
 * The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).
  
+* Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg)  [AddBlenderCustomPropertiesFromCSVAddOn.py]() as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
+	* Then select file with file selector;
+    * Select 'Add Custom Props' button.	
+ 
 
-#### Test Output
+#### Test Output (same output for either [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/tree/master/py)py script or [AddBlenderCustomPropertiesFromCSVAddOn.py]()  Add-on)
 
 ````
 
+********************************Add Blender Custom Properties ********************************************
+
+Adding Custom Properties with the following options:
+
+filePath:  c:\temp\test.csv
+sanitize:  True
+
 ******************************** meshName: Cube.000 ********************************************
  properties before assignment(s):  []
-Mesh's name sanitized from:  Cube.000  to:  Cube000
-Updated meshName:  Cube000 , propName:  visualKey , propValue: Cube.000
+ Mesh's name sanitized from:  Cube.000  to:  Cube000
+ Updated meshName:  Cube000 , propName:  visualKey , propValue: Cube.000
  properties after assignment(s):  [('visualKey', 'Cube.000')]
 
 ******************************** meshName: Cube.001 ********************************************
  properties before assignment(s):  []
-Mesh's name sanitized from:  Cube.001  to:  Cube001
-Updated meshName:  Cube001 , propName:  visualKey , propValue: Cube.001
+ Mesh's name sanitized from:  Cube.001  to:  Cube001
+ Updated meshName:  Cube001 , propName:  visualKey , propValue: Cube.001
  properties after assignment(s):  [('visualKey', 'Cube.001')]
-
 ````
 
 

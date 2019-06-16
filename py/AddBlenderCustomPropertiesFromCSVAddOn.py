@@ -1,12 +1,9 @@
-# Tutorial: https://youtu.be/OEkrQGFqM10
-# Folder/File Dialog: https://blender.stackexchange.com/questions/26898/how-to-create-a-folder-dialog/26906#26906
-
+# Add-on Tutorial: https://youtu.be/OEkrQGFqM10
 # Python script to set Blender Custom Properties for a mesh (.type == 'MESH')
 # Author: Mario Delgado, LinkedIn: https://www.linkedin.com/in/mario-delgado-5b6195155/
 # Source: http://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV
 # 
 # Custom Properties: https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties
-
 # Modified from: https://blender.stackexchange.com/questions/26898/how-to-create-a-folder-dialog/26906#26906
 
 bl_info = {"name": "CVS to Custom Properties", "category": "Object"}
@@ -28,7 +25,7 @@ from bpy.types import (Panel,
                        )
 
 
-class MySettings(PropertyGroup):
+class addPropsSettings(PropertyGroup):
 
     path = StringProperty(
         name="",
@@ -49,12 +46,13 @@ class processCustom(bpy.types.Operator):
     bl_idname = "object.process_custom"
     bl_label = ""
     
-    properties = bpy.props.StringProperty() # defining the property  
+    filePath =  bpy.props.StringProperty() 
+    sanitize =  bpy.props.BoolProperty() 
     
     def execute(self, context):
-        parmList = self.properties.split(",")
-        filePath = parmList[0]			  #The file selected by the user		
-        sanitize = parmList[1] == "True"  #Boolean test of check box selection	
+
+        filePath = self.filePath
+        sanitize = self.sanitize
 
         # santize = True will convert Blender's duplicate object name to a Three.js sanitized name
         # This is only a concern when exporting Blender to glTF files with the intent of importing
@@ -112,16 +110,12 @@ class processCustom(bpy.types.Operator):
                 
                 print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
                 print("")            
-	
-		
 		
         return {'FINISHED'}
-
 
 # ---------------------------------------------------------------------------------
 #  Customize Tool Panel and add file selector and check box for sanitize option
 # ---------------------------------------------------------------------------------
-
 
 class addCustomProperitesPanel(Panel):
     bl_idname = "addCustomProperitesPanel"
@@ -138,12 +132,10 @@ class addCustomProperitesPanel(Panel):
         col.prop(scn.csv_to_custom_props, "path", text="")      				#The file path selected by the user
         col.prop(scn.csv_to_custom_props, "sanitize_bool","Sanitize Mesh Name") #The sanitize option True/False 
         
-        parameter = scn.csv_to_custom_props.path + "," + str(scn.csv_to_custom_props.sanitize_bool) #comma seperated parms	
-        
-        #Icons: https://blenderartists.org/t/icon-enumeration-script-blender-2-5/491147/3
-        #Passing property: https://blenderartists.org/t/how-to-pass-two-arguments-to-a-button-operator/497013/8
-        col.operator("object.process_Custom", text="Add Custom Props").properties= parameter
-            
+        #Passing property: https://blenderartists.org/t/how-to-pass-two-arguments-to-a-button-operator/497013/8         
+        processCustomButton =  col.operator("object.process_custom", text="Add Custom Props")
+        processCustomButton.filePath =  scn.csv_to_custom_props.path 
+        processCustomButton.sanitize =  scn.csv_to_custom_props.sanitize_bool
         
 # ------------------------------------------------------------------------
 #    register and unregister functions
@@ -151,7 +143,7 @@ class addCustomProperitesPanel(Panel):
 
 def register():
     bpy.utils.register_module(__name__)
-    bpy.types.Scene.csv_to_custom_props = PointerProperty(type=MySettings)
+    bpy.types.Scene.csv_to_custom_props = PointerProperty(type=addPropsSettings)
 
 def unregister():
     bpy.utils.unregister_module(__name__)

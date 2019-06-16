@@ -14,7 +14,7 @@
 
 ### Option 1
 
-* [Run (https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) the [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py) script from within Blender and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
+* [Run](https://docs.blender.org/api/2.79/info_quickstart.html#running-scripts) the [AddBlenderCustomPropertiesFromCSV.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSV.py) script from within Blender and respond to the input prompt with filename (format: [folder]/filename.csv ) that contains the data to update the Custom Properies. 
 
 **Note:**
 * The [*input*](https://docs.python.org/3/library/functions.html#input) method awaits a response from the [system console](https://docs.blender.org/manual/en/dev/advanced/command_line/launch/windows.html?highlight=toggle%20system%20console), not the [Blender Python Interactive console](https://docs.blender.org/manual/en/dev/editors/python_console.html).

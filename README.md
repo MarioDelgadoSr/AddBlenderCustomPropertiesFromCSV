@@ -6,7 +6,7 @@
 * The Blender Add-on, [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py), will perform the same task, but as an Add-on integrated into the 3D View Tool Panel.
 
 * The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
-* This script can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
+* This script or Add-on can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
 	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
 
 ## Usage

@@ -43,7 +43,7 @@ QUOTE_NONNUMERIC
 * All text values (including column headers) must be double quoted in the .csv file.
 * The Python Scripts will throw an exception error if they attempt to convert an un-quoted character string to a float numeric.
 * Microsoft Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 
-* One option is to use the [*CVSFile* utility macro]() in the vba folder.
+* One option is to use the [*CVSFile* utility macro](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/vba/CSVFileMacro.txt) in the vba folder.
 	* The video, [*How to Write Your Very First Macro in Microsft Excel*](https://youtu.be/T--ZZSQhGqU) offers a helpful tutorial.  
 		* To use the *CVSFile* macro it, cut-and-paste the  macro's code into the VBA editor (as per the video) and excute it on the sheet that contains the data to export.
 

@@ -5,7 +5,13 @@
 
 * The Blender Add-on, [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py), will perform the same task, but as an Add-on integrated into the 3D View Tool Panel.
 
-* The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format.
+* The file loaded must be in a [*csv.DictReader*](https://docs.python.org/3/library/csv.html) class format readable with *QUOTE_NONNUMERIC* quoting:
+````
+QUOTE_NONNUMERIC
+    ... When used with the reader, input fields that are not quoted are converted to floats.
+````
+* Therefor, non-numeric components (including column headers) must be enclosed within double qutoes.
+	
 * This script or Add-on can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
 	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
 
@@ -22,9 +28,9 @@
 ### Option 2
 
 * Alternatively [install](https://www.youtube.com/watch?v=DDt96E-xojg) [AddBlenderCustomPropertiesFromCSVAddOn.py](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/py/AddBlenderCustomPropertiesFromCSVAddOn.py) as a [Blender Add-on](https://docs.blender.org/manual/en/latest/advanced/scripting/addon_tutorial.html?highlight=addon)
-	* Add-on name is '**CVS to Custom Properties**' under Object;
-	* Then select file with file selector;
-    * Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
+	* Add-on name is '**CVS to Custom Properties**' under Object;	
+	* Then select file with file selector; 
+	* Select 'Add Custom Props' button to initiate the Python script that adds Customp Properties.
 		* **Note**: The file [testWithAddOn.blend](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/testWithAddOn.blend) has the Blender add-on in a text editor window ready to be added directly for a quick-test scenario that doesn't involve [User Preferences](https://docs.blender.org/manual/en/dev/editors/preferences/addons.html?highlight=user%20preferences).
 	
 ### Screen Shot of Installed Add-on:

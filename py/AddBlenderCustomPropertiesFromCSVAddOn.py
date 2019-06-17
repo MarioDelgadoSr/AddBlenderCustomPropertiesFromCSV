@@ -76,7 +76,7 @@ class processCustom(bpy.types.Operator):
 		# "object2","prop1",prop2,...
 		#
 		# Script will assign bpy.data.objects[objectName].data[propNameN] = propN
-		#	* The quoted propNs will be treated as characters
+		#	* The quoted propNs will be treated as strings
 		#	* The un-quoted propNs will be converted to float.
 
         print("********************************Add Blender Custom Properties ********************************************")

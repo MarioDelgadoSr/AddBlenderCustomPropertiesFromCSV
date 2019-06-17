@@ -41,7 +41,7 @@ QUOTE_NONNUMERIC
 #### Creating a Properly Formatted CSV Files
 
 * All text values (including column headers) must be double quoted in the .csv file.
-* The Python Scripts will throw an exception error if they attempt to convert an un-quoted character string to a float numeric.
+* The Python Scripts will throw an exception error if they attempt to convert an un-quoted string to a float numeric.
 * Microsoft Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 
 * One option is to use the [*CVSFile* utility macro](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/vba/CSVFileMacro.txt) in the vba folder.
 	* The video, [*How to Write Your Very First Macro in Microsft Excel*](https://youtu.be/T--ZZSQhGqU) offers a helpful tutorial.  
@@ -121,7 +121,9 @@ End Sub
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
-* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) numeric float value of *prop1* to property 'propName1' and a character value of "*prop2*" to 'propertyName2':
+* The following csv file contents will assign the Blender mesh [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) :
+	* Anumeric float value of *prop1* to property 'propName1'; 
+	* A string value of "*prop2*" to 'propertyName2':
 
 ````
 "objectName","propName1","propName2"
@@ -164,7 +166,7 @@ filePath = input("Enter file name path (folder/filename.csv):")         #Example
 # "object2","prop1",prop2,...
 #
 # Script will assign bpy.data.objects[objectName].data[propNameN] = propN
-#	* The quoted propNs will be treated as characters
+#	* The quoted propNs will be treated as strings
 #	* The un-quoted propNs will be converted to float.
 
 
@@ -207,7 +209,7 @@ with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
 
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
-* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) numeric float value of *prop1* to property 'propName1' and a character value of "*prop2*" to 'propertyName2':
+* The following csv file contents will assign the Blender mesh a [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) numeric float value of *prop1* to property 'propName1' and a string value of "*prop2*" to 'propertyName2':
 
 ````
 "objectName","propName1","propName2"
@@ -298,7 +300,7 @@ class processCustom(bpy.types.Operator):
 		# "object2","prop1",prop2,...
 		#
 		# Script will assign bpy.data.objects[objectName].data[propNameN] = propN
-		#	* The quoted propNs will be treated as characters
+		#	* The quoted propNs will be treated as strings
 		#	* The un-quoted propNs will be converted to float.
 
         print("********************************Add Blender Custom Properties ********************************************")

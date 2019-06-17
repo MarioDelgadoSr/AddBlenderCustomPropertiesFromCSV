@@ -32,7 +32,7 @@
 ![Screen Shot of Demonstration](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/AddOnScreenShot.png)	
 
 
-#### Creating the Properly Formatted CSV Files
+#### Creating a Properly Formatted CSV Files
 
 * All text value (including column headers) must be double quoted in the csv file.
 * Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 

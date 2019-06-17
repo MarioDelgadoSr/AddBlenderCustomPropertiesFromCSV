@@ -1,0 +1,61 @@
+Sub CSVFile()
+
+    ' Modified from: https://stackoverflow.com/questions/846839/excel-how-to-add-double-quotes-to-strings-only-in-csv-file
+    ' Author: https://github.com/MarioDelgadoSr
+    '
+    ' Macro will export selection or current sheet in a format compatible with Python's QUOTE_NONNUMERIC quoting.
+    ' See: https://docs.python.org/3/library/csv.html
+    
+    Dim SrcRg As Range
+    Dim CurrRow As Range
+    Dim CurrCell As Range
+    Dim CurrTextStr As String
+    Dim ListSep As String
+    Dim FName As Variant
+    
+    'Prompt User for save file location
+    FName = Application.GetSaveAsFilename("", "CSV File (*.csv), *.csv")
+
+    If FName <> False Then
+      
+      'ListSep = Application.International(xlListSeparator)
+      ListSep = ","
+      
+      If Selection.Cells.Count > 1 Then
+      
+        Set SrcRg = Selection
+      
+      Else
+        
+        Set SrcRg = ActiveSheet.UsedRange
+      
+      End If
+      
+      Open FName For Output As #1
+      
+        For Each CurrRow In SrcRg.Rows
+        
+          CurrTextStr = ""
+          
+          For Each CurrCell In CurrRow.Cells
+          
+            ' Quote only text value
+            DblQuoteStr = IIf(Application.IsText(CurrCell.Value), """", "")
+            CurrTextStr = CurrTextStr & DblQuoteStr & CurrCell.Value & DblQuoteStr & ListSep
+          
+          Next 'CurCell
+          
+          While Right(CurrTextStr, 1) = ListSep
+            'Remove last ',' on the line
+            CurrTextStr = Left(CurrTextStr, Len(CurrTextStr) - 1)
+          Wend
+          
+          Print #1, CurrTextStr
+        
+        Next 'CurrRow
+      
+      Close #1
+    
+    End If
+  
+End Sub

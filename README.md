@@ -40,11 +40,82 @@ QUOTE_NONNUMERIC
 
 #### Creating a Properly Formatted CSV Files
 
-* All text value (including column headers) must be double quoted in the csv file.
-* Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 
-* One option is to use a [macro](https://stackoverflow.com/questions/846839/excel-how-to-add-double-quotes-to-strings-only-in-csv-file).
-* Another option is to use [OpenOffice](http://www.openoffice.org/) as detailed in [this post](https://superuser.com/questions/130592/how-do-you-force-excel-to-quote-all-columns-of-a-csv-file).
+* All text values (including column headers) must be double quoted in the .csv file.
 * The Python Scripts will throw an exception error if they attempt to convert an un-quoted character string to a float numeric.
+* Microsoft Excel does not add double quotes around text values automatically with its [Save As](https://support.office.com/en-us/article/Save-a-workbook-in-another-file-format-6A16C862-4A36-48F9-A300-C2CA0065286E) option. 
+* One option is to use the [*CVSFile* utility macro]() in the vba folder.
+	* The video, [*How to Write Your Very First Macro in Microsft Excel*](https://youtu.be/T--ZZSQhGqU) offers a helpful tutorial.  
+		* To use the *CVSFile* macro it, cut-and-paste the  macro's code into the VBA editor (as per the video) and excute it on the sheet that contains the data to export.
+
+##### Utility Macro's Text:
+
+````
+Sub CSVFile()
+
+    ' Modified from: https://stackoverflow.com/questions/846839/excel-how-to-add-double-quotes-to-strings-only-in-csv-file
+    ' Author: https://github.com/MarioDelgadoSr
+    '
+    ' Macro will export selection or current sheet in a format compatible with Python's QUOTE_NONNUMERIC quoting.
+    ' See: https://docs.python.org/3/library/csv.html
+    
+    Dim SrcRg As Range
+    Dim CurrRow As Range
+    Dim CurrCell As Range
+    Dim CurrTextStr As String
+    Dim ListSep As String
+    Dim FName As Variant
+    
+    'Prompt User for save file location
+    FName = Application.GetSaveAsFilename("", "CSV File (*.csv), *.csv")
+
+    If FName <> False Then
+      
+      'ListSep = Application.International(xlListSeparator)
+      ListSep = ","
+      
+      If Selection.Cells.Count > 1 Then
+      
+        Set SrcRg = Selection
+      
+      Else
+        
+        Set SrcRg = ActiveSheet.UsedRange
+      
+      End If
+      
+      Open FName For Output As #1
+      
+        For Each CurrRow In SrcRg.Rows
+        
+          CurrTextStr = ""
+          
+          For Each CurrCell In CurrRow.Cells
+          
+            ' Quote only text value
+            DblQuoteStr = IIf(Application.IsText(CurrCell.Value), """", "")
+            CurrTextStr = CurrTextStr & DblQuoteStr & CurrCell.Value & DblQuoteStr & ListSep
+          
+          Next 'CurCell
+          
+          While Right(CurrTextStr, 1) = ListSep
+            'Remove last ',' on the line
+            CurrTextStr = Left(CurrTextStr, Len(CurrTextStr) - 1)
+          Wend
+          
+          Print #1, CurrTextStr
+        
+        Next 'CurrRow
+      
+      Close #1
+    
+    End If
+  
+End Sub
+
+````
+
+* Another option is to use [OpenOffice](http://www.openoffice.org/) as detailed in [this post](https://superuser.com/questions/130592/how-do-you-force-excel-to-quote-all-columns-of-a-csv-file).
+
 
 #### Script Workflow
 

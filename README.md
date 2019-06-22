@@ -437,7 +437,7 @@ sanitize:  True
  properties after assignment(s):  [('value', 20.0)]
 ````
 
-The file [test.gltf]() is a glTF file exported after the data was added to the Blender scene.
+The file [test.gltf](https://github.com/MarioDelgadoSr/AddBlenderCustomPropertiesFromCSV/blob/master/test/test.gltf) is a [glTF file exported](https://wiki.blender.org/wiki/Reference/Release_Notes/2.80/Import_Export) after the data was added to the Blender scene.
 
 
 ## Author

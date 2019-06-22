@@ -437,6 +437,8 @@ sanitize:  True
  properties after assignment(s):  [('value', 20.0)]
 ````
 
+The file [test.gltf]() is a glTF file exported after the data was added to the Blender scene.
+
 
 ## Author
 

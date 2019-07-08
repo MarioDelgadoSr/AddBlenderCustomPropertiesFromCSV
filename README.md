@@ -122,7 +122,7 @@ End Sub
 * Assuming a Blender object (.type = 'MESH'); 
 * With a name == 'object1';
 * The following csv file contents will assign the Blender mesh [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) :
-	* Anumeric float value of *prop1* to property 'propName1'; 
+	* A numeric float value of *prop1* to property 'propName1'; 
 	* A string value of "*prop2*" to 'propertyName2':
 
 ````

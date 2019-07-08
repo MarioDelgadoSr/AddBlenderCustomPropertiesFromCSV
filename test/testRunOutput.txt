@@ -15,4 +15,4 @@ sanitize:  True
  properties before assignment(s):  []
  Mesh's name sanitized from:  Cube.001  to:  Cube001
  Updated meshName:  Cube001 , propName:  value , propValue: 20.0
- properties after assignment(s):  [('value', 20.0)]
+ properties after assignment(s):  [('value', 20.0)]]

@@ -87,8 +87,9 @@ class processCustom(bpy.types.Operator):
         print("sanitize: ", str(sanitize))
         print(" ")
 
-        with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
-			rdr = csv.DictReader( csvfile, quoting = csv.QUOTE_NONNUMERIC )  
+        # https://docs.python.org/3/library/csv.html
+        with open( filePath ) as csvfile:
+            rdr=csv.DictReader(csvfile,quoting=csv.QUOTE_NONNUMERIC)
             for row in rdr:
 
                 meshName = row[rdr.fieldnames[0]]
@@ -107,11 +108,12 @@ class processCustom(bpy.types.Operator):
                         print (" Mesh's name sanitized from: ",meshName, " to: ", mesh.name)
                         meshName = mesh.name
                     
-                    mesh.data[propName] = propValue    
-                    print(" Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
+					#Custom Property Assigned to Object, this assures userData on ThreeJS is assigned to groups as well
+                    mesh[propName]=propValue
+                    print(" Update meshName: ", meshName, ",propName: ", propName, ", proValue: ", mesh[propName])
                 
-                print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
-                print("")            
+                print(" properties after assignment(s): ", bpy.data.objects[meshName].items())
+                print("")
 		
         return {'FINISHED'}
 

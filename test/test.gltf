@@ -19,21 +19,35 @@
             "type": "VEC3"
         },
         {
-            "bufferView": 0,
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 36,
+            "max": [
+                23
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Cube.001_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 24,
             "max": [
-                1.0000003576278687,
                 1.0,
-                1.0000003576278687
+                1.0,
+                1.0
             ],
             "min": [
-                -1.0000004768371582,
                 -1.0,
-                -1.0000005960464478
+                -1.0,
+                -1.0
             ],
-            "name": "accessor_buffer_Cube.000_POSITION_0",
+            "name": "accessor_buffer_Cube.000_NORMAL_0",
             "type": "VEC3"
         },
         {
@@ -69,36 +83,22 @@
             "type": "SCALAR"
         },
         {
-            "bufferView": 1,
+            "bufferView": 0,
             "byteOffset": 0,
             "componentType": 5126,
             "count": 24,
             "max": [
+                1.0000003576278687,
                 1.0,
-                1.0,
-                1.0
+                1.0000003576278687
             ],
             "min": [
+                -1.0000004768371582,
                 -1.0,
-                -1.0,
-                -1.0
+                -1.0000005960464478
             ],
-            "name": "accessor_buffer_Cube.000_NORMAL_0",
+            "name": "accessor_buffer_Cube.000_POSITION_0",
             "type": "VEC3"
-        },
-        {
-            "bufferView": 5,
-            "byteOffset": 0,
-            "componentType": 5123,
-            "count": 36,
-            "max": [
-                23
-            ],
-            "min": [
-                0
-            ],
-            "name": "accessor_buffer_Cube.001_0",
-            "type": "SCALAR"
         }
     ],
     "asset": {
@@ -217,34 +217,28 @@
     ],
     "meshes": [
         {
-            "extras": {
-                "value": 10.0
-            },
             "name": "Cube.000",
             "primitives": [
                 {
                     "attributes": {
-                        "NORMAL": 4,
-                        "POSITION": 1
+                        "NORMAL": 2,
+                        "POSITION": 5
                     },
-                    "indices": 3,
+                    "indices": 4,
                     "material": 0,
                     "mode": 4
                 }
             ]
         },
         {
-            "extras": {
-                "value": 20.0
-            },
             "name": "Cube.001",
             "primitives": [
                 {
                     "attributes": {
                         "NORMAL": 0,
-                        "POSITION": 2
+                        "POSITION": 3
                     },
-                    "indices": 5,
+                    "indices": 1,
                     "material": 1,
                     "mode": 4
                 }
@@ -273,6 +267,9 @@
             ]
         },
         {
+            "extras": {
+                "value": 10.0
+            },
             "mesh": 0,
             "name": "Cube000",
             "rotation": [
@@ -293,6 +290,9 @@
             ]
         },
         {
+            "extras": {
+                "value": 20.0
+            },
             "mesh": 1,
             "name": "Cube001",
             "rotation": [

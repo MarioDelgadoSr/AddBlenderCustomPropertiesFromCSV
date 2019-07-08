@@ -61,8 +61,9 @@ with open( filePath ) as csvfile:   # https://docs.python.org/3/library/csv.html
                 print (" Mesh's name sanitized from: ",meshName, " to: ", mesh.name)
                 meshName = mesh.name
             
-            mesh.data[propName] = propValue    
-            print(" Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh.data[propName])
+            #Custom Property Assigned to Object, this assures userData on ThreeJS is assigned to groups as well
+            mesh[propName] = propValue    
+            print(" Updated meshName: ", meshName, ", propName: ", propName, ", propValue:", mesh[propName])
         
-        print(" properties after assignment(s): ", bpy.data.objects[meshName].data.items()) 
+        print(" properties after assignment(s): ", bpy.data.objects[meshName].items()) 
         print("")

@@ -3341,7 +3341,7 @@
         {
             "extras": {
                 "COLOR_COMPLAINTS": "yellow",
-                "COLOR_PART": "green",
+                "COLOR_name": "green",
                 "COLOR_REPAIRS": "red",
                 "COMPLAINTS": 4.0,
                 "REPAIRS": 5.0
@@ -3707,7 +3707,7 @@
         {
             "extras": {
                 "COLOR_COMPLAINTS": "red",
-                "COLOR_PART": "red",
+                "COLOR_name": "red",
                 "COLOR_REPAIRS": "green",
                 "COMPLAINTS": 5.0,
                 "REPAIRS": 1.0
@@ -3742,7 +3742,7 @@
         {
             "extras": {
                 "COLOR_COMPLAINTS": "green",
-                "COLOR_PART": "blue",
+                "COLOR_name": "blue",
                 "COLOR_REPAIRS": "green",
                 "COMPLAINTS": 3.0,
                 "REPAIRS": 0.0
@@ -3763,7 +3763,7 @@
         {
             "extras": {
                 "COLOR_COMPLAINTS": "red",
-                "COLOR_PART": "yellow",
+                "COLOR_name": "yellow",
                 "COLOR_REPAIRS": "green",
                 "COMPLAINTS": 4.0,
                 "REPAIRS": 1.0

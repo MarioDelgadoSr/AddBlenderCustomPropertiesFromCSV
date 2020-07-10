@@ -13,7 +13,7 @@ QUOTE_NONNUMERIC
 * Therefore, non-numeric components (including column headers) must be enclosed within double qutoes.
 	
 * The script or Add-on can be used to 'enrich' a Blender file, that will be exported to a glTF file, with embedded data.
-	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/latest/data_system/custom_properties.html?highlight=custom%20properties) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
+	* When a Blender file is exported to a glTF file, the [Custom Properties](https://docs.blender.org/manual/en/dev/addons/import_export/scene_gltf2.html?highlight=extras) are placed in the [*extras* properties](https://docs.blender.org/manual/en/dev/addons/io_gltf2.html) associated with the mesh.
 
 ## Usage
 
